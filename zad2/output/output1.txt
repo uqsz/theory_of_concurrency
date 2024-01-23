@@ -1,0 +1,26 @@
+INPUT
+Equations: ['xx1', 'yyz', 'xxz', 'wwv', 'zyz', 'vxv']
+A: abcdef
+w: acdcfbbe
+RESULTS
+D = [('a', 'a'), ('c', 'a'), ('a', 'c'), ('f', 'a'), ('a', 'f'), ('b', 'b'), ('e', 'b'), ('b', 'e'), ('c', 'c'), ('e', 'c'), ('c', 'e'), ('f', 'c'), ('c', 'f'), ('d', 'd'), ('f', 'd'), ('d', 'f'), ('e', 'e'), ('f', 'f')]
+I = [('a', 'b'), ('b', 'a'), ('a', 'd'), ('d', 'a'), ('a', 'e'), ('e', 'a'), ('b', 'c'), ('c', 'b'), ('b', 'd'), ('d', 'b'), ('b', 'f'), ('f', 'b'), ('c', 'd'), ('d', 'c'), ('d', 'e'), ('e', 'd'), ('e', 'f'), ('f', 'e')]
+FNF(|w|) = [['a', 'd', 'b'], ['c', 'b'], ['c'], ['f', 'e']] 
+
+digraph g {
+1 [label = a]
+2 [label = c]
+3 [label = d]
+4 [label = c]
+5 [label = f]
+6 [label = b]
+7 [label = b]
+8 [label = e]
+1 -> 2
+2 -> 4
+3 -> 5
+4 -> 5
+4 -> 8
+6 -> 7
+7 -> 8
+}
